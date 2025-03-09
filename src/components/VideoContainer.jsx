@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { YOUTUBE_VIDEO_API } from "../Constant";
 import VideoCard from "./VideoCard";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { openMenu } from "../utils/appSlice";
 
 const VideoContainer = () => {
+  const dispatch = useDispatch();
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    dispatch(openMenu());
     getVideos();
   }, []);
 
@@ -20,7 +25,9 @@ const VideoContainer = () => {
   return (
     <div className="flex flex-wrap mx-auto gap-2">
       {videos.map((video) => (
-        <VideoCard key={video.id} info={video} />
+        <Link to={"/watch?v=" + video.id} key={video.id}>
+          <VideoCard key={video.id} info={video} />
+        </Link>
       ))}
     </div>
   );
