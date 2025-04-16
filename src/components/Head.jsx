@@ -69,7 +69,7 @@ const Head = () => {
           />
         </NavLink>
       </div>
-      <div className="flex flex-row justify-center grow-8 relative">
+      <div className="flex flex-row justify-center items-baseline grow-8 relative">
         <div className="flex grow-6">
           <form
             className=" w-full text-center"
