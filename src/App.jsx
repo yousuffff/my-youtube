@@ -6,6 +6,8 @@ import store from "./utils/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import ViewVideoPage from "./components/ViewVideoPage";
+import SearchVideoPage from "./components/SearchVideoPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -18,6 +20,7 @@ function App() {
           path: "/watch",
           element: <ViewVideoPage />,
         },
+        { path: "/search/:param", element: <SearchVideoPage /> },
       ],
     },
   ]);

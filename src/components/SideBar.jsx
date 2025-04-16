@@ -8,7 +8,7 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="p-5 pr-10 shadow-2xl w-72 h-scren">
+    <div className="p-5 pr-10 shadow-2xl w-72 h-screen sticky top-12">
       <div className="m-2 flex flex-col">
         <ul>
           <Link to="/">

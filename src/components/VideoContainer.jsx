@@ -18,12 +18,13 @@ const VideoContainer = () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
     setVideos(json.items);
+    console.log(json.items);
   };
 
   if (!videos) return <h1>No data found</h1>;
 
   return (
-    <div className="flex flex-wrap mx-auto gap-2">
+    <div className="flex flex-wrap mx-1 gap-1">
       {videos.map((video) => (
         <Link to={"/watch?v=" + video.id} key={video.id}>
           <VideoCard key={video.id} info={video} />
